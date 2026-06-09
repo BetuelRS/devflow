@@ -1,0 +1,17 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - JWT_SECRET=change-this-in-production
+      - CLIENT_URL=http://localhost:5173
+    volumes:
+      - devflow-data:/app/server
+    restart: unless-stopped
+
+volumes:
+  devflow-data:
