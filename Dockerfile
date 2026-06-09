@@ -15,11 +15,11 @@ COPY client client
 RUN npm run build -w server && npm run build -w client
 
 FROM base AS runner
-WORKDIR /app/server
+WORKDIR /app
 ENV NODE_ENV=production
-COPY --from=build /app/server/dist ./dist
-COPY --from=build /app/server/package.json ./
-COPY --from=build /app/node_modules ../node_modules
-COPY --from=build /app/client/dist ./client-dist
+COPY --from=build /app/server/dist ./server/dist
+COPY --from=build /app/server/package.json ./server/
+COPY --from=build /app/client/dist ./client/dist
+COPY --from=build /app/node_modules ./node_modules
 EXPOSE 3001
-CMD ["node", "dist/index.js"]
+CMD ["node", "server/dist/index.js"]
