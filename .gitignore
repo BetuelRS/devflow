@@ -3,3 +3,4 @@ dist/
 devflow.db
 *.log
 .env
+test-results/
