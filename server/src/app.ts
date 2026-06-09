@@ -23,6 +23,6 @@ app.use('/api/cards', cardRoutes);
 app.get('/api/health', (_req, res) => res.json({ status: 'ok' }));
 
 // Serve client build in production
-const clientDist = path.join(__dirname, '..', 'client-dist');
+const clientDist = path.join(__dirname, '..', '..', 'client', 'dist');
 app.use(express.static(clientDist));
 app.get('*', (_req, res) => res.sendFile(path.join(clientDist, 'index.html')));
