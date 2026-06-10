@@ -1,5 +1,8 @@
 # DevFlow
 
+[![CI](https://github.com/BetuelRS/devflow/actions/workflows/ci.yml/badge.svg)](https://github.com/BetuelRS/devflow/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Full-stack Kanban board with real-time collaboration. Drag-drop cards, manage tasks, sync across devices.
 
 Built with React 19 + Express + SQLite + WebSocket. Zero external dependencies for data — your boards, your server.

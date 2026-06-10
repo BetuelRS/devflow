@@ -21,5 +21,7 @@ COPY --from=build /app/server/dist ./server/dist
 COPY --from=build /app/server/package.json ./server/
 COPY --from=build /app/client/dist ./client/dist
 COPY --from=build /app/node_modules ./node_modules
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+USER appuser
 EXPOSE 3001
 CMD ["node", "server/dist/index.js"]
