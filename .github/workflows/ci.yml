@@ -53,5 +53,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Deploy to Render
+        if: secrets.RENDER_DEPLOY_HOOK != ''
         run: |
-          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
